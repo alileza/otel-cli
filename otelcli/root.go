@@ -133,7 +133,7 @@ func addClientParams(cmd *cobra.Command, config *Config) {
 	cmd.Flags().BoolVar(&config.TlsNoVerify, "no-tls-verify", defaults.TlsNoVerify, "(deprecated) same as --tls-no-verify")
 
 	// OTEL_CLI trace propagation options
-	cmd.Flags().BoolVar(&config.TraceparentRequired, "tp-required", defaults.TraceparentRequired, "when set to true, fail and log if a traceparent can't be picked up from TRACEPARENT ennvar or a carrier file")
+	cmd.Flags().BoolVar(&config.TraceparentRequired, "tp-required", defaults.TraceparentRequired, "when set to true, fail and log if a traceparent can't be picked up from TRACEPARENT environment variable or a carrier file")
 	cmd.Flags().StringVar(&config.TraceparentCarrierFile, "tp-carrier", defaults.TraceparentCarrierFile, "a file for reading and WRITING traceparent across invocations")
 	cmd.Flags().BoolVar(&config.TraceparentIgnoreEnv, "tp-ignore-env", defaults.TraceparentIgnoreEnv, "ignore the TRACEPARENT envvar even if it's set")
 	cmd.Flags().BoolVar(&config.TraceparentPrint, "tp-print", defaults.TraceparentPrint, "print the trace id, span id, and the w3c-formatted traceparent representation of the new span")
